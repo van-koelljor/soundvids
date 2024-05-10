@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "test:unit": "vitest run",
     "lint": "eslint . --fix",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
@@ -46,6 +47,7 @@
     "electron": "^29.1.6",
     "electron-builder": "^24.13.3",
     "eslint": "^8.57.0",
+    "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
     "rollup-plugin-regexp": "^5.0.1",
