@@ -1,0 +1,15 @@
+<svg width="400" height="400" viewBox="90 50 490 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g mask="url(#triangle)">
+    <g transform="translate(335, 275)">
+      <circle cx="0" cy="0" r="200" fill="#c6e2f3" fill-opacity="1"/>
+      <circle cx="0" cy="0" r="160" fill="#76bef1" fill-opacity="1"/>
+      <circle cx="0" cy="0" r="120" fill="#3daef5" fill-opacity="1"/>
+    </g>
+  </g>
+  <mask id="triangle">
+    <g transform="translate(335, 275) rotate(90)">
+      <rect x="-300" y="-300" width="600" height="600" fill="white"/>
+      <polygon points="0,-93.33 81.33,46.67 -81.33,46.67" fill="black"/>
+    </g>
+  </mask>
+</svg>
