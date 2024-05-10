@@ -33,6 +33,8 @@
     "wavesurfer.js": "^7.7.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@nuxt/eslint-config": "0.3.0-beta.8",
     "@pinia/testing": "^0.1.3",
     "@testing-library/vue": "^8.0.3",
