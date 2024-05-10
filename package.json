@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build && electron-builder",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "test:unit": "vitest run",
     "lint": "eslint . --fix",
     "format": "prettier . --write"
   },
