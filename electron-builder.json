@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/app-builder-lib/scheme.json",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "files": ["dist-electron", "dist", "!node_modules/**/*"],
+  "electronLanguages": ["zh-CN"],
+  "win": {
+    "icon": "dist/favicon.ico",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": true
+  }
+}
