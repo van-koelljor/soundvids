@@ -6,6 +6,6 @@
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vitest.tsbuildinfo",
     "lib": [],
-    "types": ["node", "jsdom", "vitest/globals"]
+    "types": ["node", "jsdom", "vitest/globals", "./shims-vue.d.ts"]
   }
 }
