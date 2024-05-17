@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia'
 import type { Video } from '@/types/video'
 
 export const useVideoStore = defineStore('video', {
