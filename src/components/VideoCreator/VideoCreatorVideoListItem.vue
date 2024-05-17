@@ -25,7 +25,6 @@
 
 <script setup lang="ts">
 import 'video.js/dist/video-js.css';
-import { defineProps } from 'vue';
 import { VideoPlayer } from '@videojs-player/vue';
 import { useVideoStore } from '@/stores/video';
 import { stripMediaLoaderPrefix } from '@/utils/pathUtils';
