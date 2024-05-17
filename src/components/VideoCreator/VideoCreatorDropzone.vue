@@ -48,8 +48,9 @@ function createObjectURL(blob: Blob) {
   return URL.createObjectURL(blob);
 }
 
-function onFileDrop(event) {
-  const filesList = event.dataTransfer.files
+function onFileDrop(event: DragEvent) {
+  const filesList = event.dataTransfer?.files
+  if (!filesList) return;
   for (let i = 0; i < filesList.length; i++) {
     const file = filesList[i]
     const type = file.type.startsWith('audio/') ? 'audio' : 'image'
@@ -60,7 +61,7 @@ function onFileDrop(event) {
   }
 }
 
-function removeFile(fileName) {
+function removeFile(fileName: string) {
   files.value = files.value.filter(file => file.name !== fileName);
   emit('update:files', files.value);
 }
