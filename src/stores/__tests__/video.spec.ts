@@ -1,5 +1,3 @@
-import { describe, it, expect } from 'vitest'
-import { createPinia, setActivePinia } from 'pinia'
 import { useVideoStore } from '../video'
 import type { Video } from '@/types/video'
 
