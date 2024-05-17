@@ -1,7 +1,6 @@
 import VideoCreatorPage from '@/pages/videoCreator.vue'
 import setupVuetify from './setup/vuetify'
 import { createTestingPinia } from '@pinia/testing'
-import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/vue'
 
 describe('VideoCreatorPage', () => {
