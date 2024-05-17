@@ -12,7 +12,7 @@
     </v-row>
     <v-row>
       <v-col cols="12" class="d-flex align-center">
-        <v-icon icon="mdi-folder-outline" size="small"></v-icon>
+        <v-icon icon="mdi-folder-outline" size="small"/>
         <span class="ml-2">{{ videoOutputPath }}</span>
       </v-col>
     </v-row>

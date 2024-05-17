@@ -7,7 +7,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-btn @click="addToQueue" :disabled="!canAddToQueue">
+        <v-btn :disabled="!canAddToQueue" @click="addToQueue">
           Add to Queue
         </v-btn>
       </v-col>
@@ -19,7 +19,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-btn @click="startCreation" :disabled="queueItems.length === 0">Start Creation</v-btn>
+        <v-btn :disabled="queueItems.length === 0" @click="startCreation">Start Creation</v-btn>
       </v-col>
     </v-row>
     <v-row>

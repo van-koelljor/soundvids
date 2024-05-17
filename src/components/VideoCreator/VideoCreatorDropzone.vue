@@ -6,7 +6,7 @@
           <v-icon>mdi-upload</v-icon>
           <p>Drop the audio file here</p>
         </div>
-        <VideoCreatorDropzoneAudio v-else v-for="file in audioFiles" :key="file.name" :file-blob="file.blob" :file-name="file.name" :remove-file="() => removeFile(file.name)" />
+        <VideoCreatorDropzoneAudio v-for="file in audioFiles" v-else :key="file.name" :file-blob="file.blob" :file-name="file.name" :remove-file="() => removeFile(file.name)" />
       </v-col>
     </v-row>
     <v-row>
@@ -16,8 +16,8 @@
           <p>Drop one or multiple image files here</p>
         </div>
         <v-row v-else>
-          <v-col cols="12" sm="6" md="3" v-for="file in imageFiles" :key="file.name">
-            <v-hover v-slot:default="{ hover }">
+          <v-col v-for="file in imageFiles" :key="file.name" cols="12" sm="6" md="3">
+            <v-hover v-slot="{ hover }">
               <v-card :class="{ 'highlight': hover }" class="square-image-card">
                 <v-img :src="createObjectURL(file.blob)" class="preview-image" cover>
                   <v-card-title class="image-title">{{ file.name }}</v-card-title>
