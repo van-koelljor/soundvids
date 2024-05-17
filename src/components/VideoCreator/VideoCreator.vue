@@ -86,8 +86,7 @@ async function startCreation() {
 
       videoStore.addCreatedVideo({
        id: job.id,
-       src: addMediaLoaderPrefix(outputPath),
-       poster: 'https://picsum.photos/320/180'
+       src: addMediaLoaderPrefix(outputPath)
    });
 
       job.status = 'completed';
