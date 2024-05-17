@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch, computed } from 'vue';
 import WaveSurfer from 'wavesurfer.js';
 import { useTheme } from 'vuetify'
 

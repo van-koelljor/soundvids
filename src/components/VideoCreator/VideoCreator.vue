@@ -31,15 +31,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import { Buffer } from 'buffer';
 import type { File } from '@/types/file'
 import type { VideoCreationJob } from '@/types/job'
 import JobQueue from '../JobQueue/JobQueue.vue'
 import VideoCreatorDropzone from './VideoCreatorDropzone.vue'
 import VideoCreatorVideoList from './VideoCreatorVideoList.vue';
-import { useSettingsStore } from '@/stores/settings';
-import { useVideoStore } from '@/stores/video';
 import { addMediaLoaderPrefix } from '@/utils/pathUtils';
 
 const queueItems = ref<VideoCreationJob[]>([])

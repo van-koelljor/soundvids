@@ -35,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import type { File } from '@/types/file'
 import VideoCreatorDropzoneAudio from './VideoCreatorDropzoneAudio.vue';
 
