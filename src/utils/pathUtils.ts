@@ -1,8 +1,8 @@
-function addMediaLoaderPrefix(url) {
+function addMediaLoaderPrefix(url: string) {
   return `media-loader://${url}`;
 }
 
-function stripMediaLoaderPrefix(url) {
+function stripMediaLoaderPrefix(url: string) {
   return url.replace('media-loader://', '');
 }
 
