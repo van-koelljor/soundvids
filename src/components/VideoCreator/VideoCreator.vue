@@ -67,11 +67,11 @@ const canAddToQueue = computed(() => {
   return hasAudio && hasImage;
 });
 
-function onFilesUpdated(updatedFiles) {
+function onFilesUpdated(updatedFiles: File[]) {
   files.value = updatedFiles;
 }
 
-function onJobsUpdated(updatedJobs) {
+function onJobsUpdated(updatedJobs: VideoCreationJob[]) {
   queueItems.value = updatedJobs;
 }
 
