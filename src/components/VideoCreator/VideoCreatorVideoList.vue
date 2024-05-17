@@ -11,7 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import VideoCreatorVideoListItem from './VideoCreatorVideoListItem.vue';
 import type { Video } from '@/types/video';
 

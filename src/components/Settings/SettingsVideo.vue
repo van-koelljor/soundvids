@@ -27,10 +27,7 @@
   </v-container>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue';
-import { useSettingsStore } from '@/stores/settings';
-
+<script setup lang="ts">
 const settingsStore = useSettingsStore();
 const videoOutputPath = computed(() => settingsStore.videoOutputPath);
 
