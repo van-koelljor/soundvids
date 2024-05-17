@@ -17,8 +17,8 @@
         </div>
         <v-row v-else>
           <v-col v-for="file in imageFiles" :key="file.name" cols="12" sm="6" md="3">
-            <v-hover v-slot="{ hover }">
-              <v-card :class="{ 'highlight': hover }" class="square-image-card">
+            <v-hover v-slot="{ isHovering }">
+              <v-card :class="{ 'highlight': isHovering }" class="square-image-card">
                 <v-img :src="createObjectURL(file.blob)" class="preview-image" cover>
                   <v-card-title class="image-title">{{ file.name }}</v-card-title>
                   <v-btn class="close-btn" icon color="white" variant="text" @click="removeFile(file.name)">
