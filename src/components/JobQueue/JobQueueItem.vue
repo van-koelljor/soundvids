@@ -1,25 +1,24 @@
 <template>
 <v-list-item
-  class="hover-item"
   :key="job.id"
+  class="hover-item"
   :title="job.audioFile.name + ' & ' + job.imageFile.name"
   :subtitle="'Status: ' + job.status"
 >
-  <template v-slot:prepend>
-    <v-list-item-action class="d-flex align-center">
-  </v-list-item-action>
+  <template #prepend>
+    <v-list-item-action class="d-flex align-center"/>
   <v-avatar color="primary">
     <v-icon color="white">mdi-file-video</v-icon>
   </v-avatar>
   </template>
 
-  <template v-slot:append>
+  <template #append>
     <v-btn
       color="grey-lighten-1"
       icon="mdi-close"
       variant="text"
       @click="removeJob(job.id)"
-    ></v-btn>
+    />
   </template>
 </v-list-item>
 </template>
@@ -30,7 +29,7 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:job-removed'])
 
-const removeJob = (id) => {
+const removeJob = (id: number) => {
   emit('update:job-removed', id)
 }
 </script>

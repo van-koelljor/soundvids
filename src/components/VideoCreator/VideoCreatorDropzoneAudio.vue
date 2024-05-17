@@ -1,6 +1,6 @@
 <template>
   <v-card class="audio-card">
-    <div ref="waveform" class="waveform"></div>
+    <div ref="waveform" class="waveform"/>
     <v-card-title class="audio-title">{{ fileName }}</v-card-title>
     <v-btn class="close-btn" icon color="white" variant="text" @click="removeFile">
       <v-icon>mdi-close</v-icon>

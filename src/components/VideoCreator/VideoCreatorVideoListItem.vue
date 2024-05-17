@@ -14,7 +14,7 @@
         <v-card-title class="text-h5">Confirm Deletion</v-card-title>
         <v-card-text>Are you sure you want to delete this video?</v-card-text>
         <v-card-actions>
-          <v-spacer></v-spacer>
+          <v-spacer/>
           <v-btn color="green darken-1" text @click="showDialog = false">Cancel</v-btn>
           <v-btn color="red darken-1" text @click="removeVideo(video.id)">Delete</v-btn>
         </v-card-actions>
