@@ -1,4 +1,5 @@
 import { contextBridge, ipcRenderer } from 'electron';
+import { join } from 'path';
 
 contextBridge.exposeInMainWorld('electronAPI', {
   getTempDir: () => ipcRenderer.invoke('getTempDir'),
@@ -9,7 +10,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     return writeFile(path, data);
   },
   deleteFile: (path) => ipcRenderer.invoke('delete-file', path),
-  joinPath: (...paths) => require('path').join(...paths),
+  joinPath: (...paths) => join(...paths),
   openDirectoryDialog: () => ipcRenderer.invoke('open-directory-dialog'),
   setVideoOutputPath: (path) => ipcRenderer.invoke('setVideoOutputPath', path)
 });
