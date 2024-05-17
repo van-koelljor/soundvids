@@ -46,7 +46,7 @@ app.whenReady().then(() => {
     return os.tmpdir();
   });
 
-  ipcMain.handle('open-directory-dialog', async (event) => {
+  ipcMain.handle('open-directory-dialog', async () => {
     const result = await dialog.showOpenDialog({
       properties: ['openDirectory']
     });
@@ -100,6 +100,7 @@ app.whenReady().then(() => {
   });
 
   ipcMain.handle('darkMode:toggle', (event, dark: boolean) => {
+     
     // This somehow throws an error. The toggle still works with the code disabled on startup
     // win.setTitleBarOverlay(
     //   dark
