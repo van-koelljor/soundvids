@@ -1,9 +1,9 @@
 <template>
 <v-list-item
-  :key="job.id"
+  :key="job?.id"
   class="hover-item"
-  :title="job.audioFile.name + ' & ' + job.imageFile.name"
-  :subtitle="'Status: ' + job.status"
+  :title="job ? job.audioFile.name + ' & ' + job.imageFile.name : ''"
+  :subtitle="job ? 'Status: ' + job.status : ''"
 >
   <template #prepend>
     <v-list-item-action class="d-flex align-center"/>
@@ -17,7 +17,7 @@
       color="grey-lighten-1"
       icon="mdi-close"
       variant="text"
-      @click="removeJob(job.id)"
+      @click="job && removeJob(job.id)"
     />
   </template>
 </v-list-item>
@@ -29,8 +29,10 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:job-removed'])
 
-const removeJob = (id: number) => {
-  emit('update:job-removed', id)
+const removeJob = (id: number | undefined) => {
+  if (id !== undefined) {
+    emit('update:job-removed', id)
+  }
 }
 </script>
 
