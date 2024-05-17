@@ -1,6 +1,5 @@
 import setupVuetify from './setup/vuetify'
 import SettingsVideo from '@/components/Settings/SettingsVideo.vue'
-import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/vue'
 import { createTestingPinia } from '@pinia/testing'
 
