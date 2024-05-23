@@ -4,6 +4,7 @@ SoundVids is an Electron application for generating videos using images and audi
 
 
 ## Features
+
 * **Combine images and audio:** Create videos by merging images and audio files.
 * **User-friendly interface:** Utilize drag-and-drop functionality for ease of use.
 * **Multiple image formats:** Support for a wide range of image formats.
@@ -43,6 +44,7 @@ Start a standalone [Vue devtools](https://github.com/vuejs/devtools) and launch 
 ```bash
 pnpm dev
 ```
+
 
 ### Build
 
