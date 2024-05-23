@@ -1,6 +1,6 @@
 # <img src="public/favicon.svg" alt="SoundVids Logo" width="60" height="60" style="vertical-align: middle;"> <span style="color: #3daef5; vertical-align: middle;">SoundVids</span>
 
-SoundVids is an Electron application for generating videos using images and audio files. It allows users to easily combine their favorite images and audio tracks into a single video file.
+SoundVids is an Electron application for generating videos using images and audio files.
 
 
 ## Features
