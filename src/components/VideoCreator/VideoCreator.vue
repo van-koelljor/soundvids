@@ -76,23 +76,31 @@ function onJobsUpdated(updatedJobs: VideoCreationJob[]) {
 }
 
 async function startCreation() {
-  for (const job of queueItems.value) {
-    try {
-      const imageFilePath = await saveFileTemporarily(job.imageFile.blob, `${job.id}-image`);
-      const audioFilePath = await saveFileTemporarily(job.audioFile.blob, `${job.id}-audio`);
-      const outputPath = await window.electronAPI.joinPath(videoOutputPath.value, `${job.id}.mp4`);
+  if (!videoOutputPath.value) {
+    const result = await window.electronAPI.openDirectoryDialog();
+    if (!result.canceled && result.path) {
+      await settingsStore.setVideoOutputPath(result.path);
+    }
+  }
+  if (videoOutputPath.value) {
+    for (const job of queueItems.value) {
+      try {
+        const imageFilePath = await saveFileTemporarily(job.imageFile.blob, `${job.id}-image`);
+        const audioFilePath = await saveFileTemporarily(job.audioFile.blob, `${job.id}-audio`);
+        const outputPath = await window.electronAPI.joinPath(videoOutputPath.value, `${job.id}.mp4`);
 
-      await window.electronAPI.createVideo(imageFilePath, audioFilePath, outputPath);
+        await window.electronAPI.createVideo(imageFilePath, audioFilePath, outputPath);
 
-      videoStore.addCreatedVideo({
-       id: job.id,
-       src: addMediaLoaderPrefix(outputPath)
-   });
+        videoStore.addCreatedVideo({
+          id: job.id,
+          src: addMediaLoaderPrefix(outputPath)
+        });
 
-      job.status = 'completed';
-    } catch (error) {
-      console.error(`Video creation error for job ${job.id}: ${error}`);
-      job.status = 'failed';
+        job.status = 'completed';
+      } catch (error) {
+        console.error(`Video creation error for job ${job.id}: ${error}`);
+        job.status = 'failed';
+      }
     }
   }
 }
