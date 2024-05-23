@@ -16,8 +16,8 @@ SoundVids is an Electron application for generating videos using images and audi
 ### Prerequisites
 
 Make sure you have the following installed:
-- Node.js
-- npm, yarn, or pnpm
+- [Node.js](https://nodejs.org/) (recommended: install via [nvm](https://github.com/nvm-sh/nvm))
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), [yarn](https://yarnpkg.com/), or [pnpm](https://pnpm.io/)
 
 
 ### Installation
