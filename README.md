@@ -23,33 +23,51 @@ Make sure you have the following installed:
 
 ### Installation
 
-Install the dependencies using your preferred package manager:
+1. **Clone the repository:**
 
-```bash
-# Using npm
-npm install
+    ```bash
+    git clone git@github.com:van-koelljor/soundvids.git
+    ```
 
-# Using yarn
-yarn install
+2. **Install dependencies using your preferred package manager:**
 
-# Using pnpm
-pnpm install
-```
+    ```bash
+    # With npm
+    npm install
 
+    # With yarn
+    yarn install
+
+    # With pnpm
+    pnpm install
+    ```
 
 ### Development
 
-Start a standalone [Vue devtools](https://github.com/vuejs/devtools) and launch Vite dev server:
+Start standalone [Vue devtools](https://github.com/vuejs/devtools) and Vite dev server:
 
 ```bash
+# With npm
+npm run dev
+
+# With yarn
+yarn dev
+
+# With pnpm
 pnpm dev
 ```
-
 
 ### Build
 
 Build release version of the application:
 
 ```bash
+# With npm
+npm run build
+
+# With yarn
+yarn build
+
+# With pnpm
 pnpm build
 ```
