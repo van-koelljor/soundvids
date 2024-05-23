@@ -2,6 +2,7 @@
 
 SoundVids is an Electron application for generating videos using images and audio files. It allows users to easily combine their favorite images and audio tracks into a single video file.
 
+
 ## Features
 * **Combine images and audio:** Create videos by merging images and audio files.
 * **User-friendly interface:** Utilize drag-and-drop functionality for ease of use.
@@ -9,7 +10,15 @@ SoundVids is an Electron application for generating videos using images and audi
 * **High-quality audio:** Ensure superior audio processing.
 * **Batch processing:** Process multiple files simultaneously.
 
+
 ## Usage
+
+### Prerequisites
+
+Make sure you have the following installed:
+- Node.js
+- npm, yarn, or pnpm
+
 
 ### Installation
 
@@ -25,6 +34,7 @@ yarn install
 # Using pnpm
 pnpm install
 ```
+
 
 ### Development
 
