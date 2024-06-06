@@ -4,7 +4,7 @@
       <v-col cols="12">
         <div v-if="audioFiles.length === 0" class="placeholder">
           <v-icon>mdi-upload</v-icon>
-          <p>Drop the audio file here</p>
+          <p>Drop audio file here</p>
         </div>
         <VideoCreatorDropzoneAudio v-for="file in audioFiles" v-else :key="file.name" :file-blob="file.blob" :file-name="file.name" :remove-file="() => removeFile(file.name)" />
       </v-col>
@@ -13,7 +13,7 @@
       <v-col cols="12">
         <div v-if="imageFiles.length === 0" class="placeholder">
           <v-icon>mdi-upload-multiple</v-icon>
-          <p>Drop one or multiple image files here</p>
+          <p>Drop image file here</p>
         </div>
         <v-row v-else>
           <v-col v-for="file in imageFiles" :key="file.name" cols="12" sm="6" md="3">
