@@ -14,8 +14,7 @@ describe('VideoCreatorPage', () => {
         plugins: [createTestingPinia()]
       }
     })
-    expect(getByText('Drop the audio file here')).toBeInTheDocument()
-    expect(getByText('Drop one or multiple image files here')).toBeInTheDocument()
-    expect(getByText('Add to Queue')).toBeInTheDocument()
+    expect(getByText('Drop audio file here')).toBeInTheDocument()
+    expect(getByText('Drop image file here')).toBeInTheDocument()
   })
 })

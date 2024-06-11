@@ -6,20 +6,10 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12">
-        <v-btn :disabled="!canAddToQueue" @click="addToQueue">
-          Add to Queue
+      <v-col cols="12" class="d-flex justify-center">
+        <v-btn :disabled="!canStartCreation" @click="startCreation">
+          Start Creation
         </v-btn>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
-        <JobQueue :jobs="queueItems" @update:jobs="onJobsUpdated"/>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
-        <v-btn :disabled="queueItems.length === 0" @click="startCreation">Start Creation</v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -34,34 +24,17 @@
 import { Buffer } from 'buffer';
 import type { File } from '@/types/file'
 import type { VideoCreationJob } from '@/types/job'
-import JobQueue from '../JobQueue/JobQueue.vue'
 import VideoCreatorDropzone from './VideoCreatorDropzone.vue'
 import VideoCreatorVideoList from './VideoCreatorVideoList.vue';
 import { addMediaLoaderPrefix } from '@/utils/pathUtils';
 
-const queueItems = ref<VideoCreationJob[]>([])
 const files = ref<File[]>([])
-
-const settingsStore = useSettingsStore();
 const videoStore = useVideoStore();
+const settingsStore = useSettingsStore();
 const videoOutputPath = computed(() => settingsStore.videoOutputPath);
 const createdVideos = computed(() => videoStore.createdVideos);
 
-function addToQueue() {
-  const audioFile = files.value.find(f => f.type === 'audio');
-  const imageFile = files.value.find(f => f.type === 'image');
-  if (audioFile && imageFile) {
-    const newJob: VideoCreationJob = {
-      id: Date.now().toString(),
-      audioFile,
-      imageFile,
-      status: 'pending'
-    };
-    queueItems.value.push(newJob);
-  }
-}
-
-const canAddToQueue = computed(() => {
+const canStartCreation = computed(() => {
   const hasAudio = files.value.some(f => f.type === 'audio');
   const hasImage = files.value.some(f => f.type === 'image');
   return hasAudio && hasImage;
@@ -69,10 +42,6 @@ const canAddToQueue = computed(() => {
 
 function onFilesUpdated(updatedFiles: File[]) {
   files.value = updatedFiles;
-}
-
-function onJobsUpdated(updatedJobs: VideoCreationJob[]) {
-  queueItems.value = updatedJobs;
 }
 
 async function startCreation() {
@@ -83,7 +52,15 @@ async function startCreation() {
     }
   }
   if (videoOutputPath.value) {
-    for (const job of queueItems.value) {
+    const audioFile = files.value.find(f => f.type === 'audio');
+    const imageFile = files.value.find(f => f.type === 'image');
+    if (audioFile && imageFile) {
+      const job: VideoCreationJob = {
+        id: Date.now().toString(),
+        audioFile,
+        imageFile,
+        status: 'pending'
+      };
       try {
         const imageFilePath = await saveFileTemporarily(job.imageFile.blob, `${job.id}-image`);
         const audioFilePath = await saveFileTemporarily(job.audioFile.blob, `${job.id}-audio`);
